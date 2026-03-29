@@ -18,6 +18,10 @@ test.describe('Hero Section', () => {
     
     const linkedinLink = page.locator('section').filter({ hasText: 'Atish Naik' }).locator('a[aria-label="LinkedIn"]');
     await expect(linkedinLink).toBeVisible();
+
+    const gmailLink = page.locator('section').filter({ hasText: 'Atish Naik' }).locator('a[aria-label="Gmail"]');
+    await expect(gmailLink).toBeVisible();
+    await expect(gmailLink).toHaveAttribute('href', /mail\.google\.com/);
   });
 
   test('should have a resume download link in hero', async ({ page }) => {

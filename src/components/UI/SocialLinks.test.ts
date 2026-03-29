@@ -10,5 +10,6 @@ describe('Social Link Icon Logic', () => {
     expect(getIconName('github')).toBe('siGithub');
     expect(getIconName('linkedin')).toBe('siLinkedin');
     expect(getIconName('twitter')).toBe('siTwitter');
+    expect(getIconName('gmail')).toBe('siGmail');
   });
 });

@@ -21,4 +21,9 @@ export const SOCIALS = [
     url: 'https://x.com/Atishnaik3',
     icon: 'twitter',
   },
+  {
+    name: 'Gmail',
+    url: 'https://mail.google.com/mail/?view=cm&fs=1&to=atishnaik8805@gmail.com',
+    icon: 'gmail',
+  },
 ];

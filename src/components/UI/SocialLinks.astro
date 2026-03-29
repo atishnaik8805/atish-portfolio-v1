@@ -11,24 +11,27 @@ const getIcon = (slug: string) => {
 
 <div class="flex gap-4">
   {
-    SOCIALS.map((social) => (
-      <a
-        href={social.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-600 hover:text-foreground dark:text-gray-400 transition-colors"
-        aria-label={social.name}
-      >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-6 h-6 fill-current"
+    SOCIALS.map((social) => {
+      const isExternal = social.url.startsWith('http');
+      return (
+        <a
+          href={social.url}
+          target={isExternal ? '_blank' : '_self'}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          class="text-gray-600 hover:text-foreground dark:text-gray-400 transition-colors"
+          aria-label={social.name}
         >
-          <title>{social.name}</title>
-          <path d={getIcon(social.icon)} />
-        </svg>
-      </a>
-    ))
+          <svg
+            role="img"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 fill-current"
+          >
+            <title>{social.name}</title>
+            <path d={getIcon(social.icon)} />
+          </svg>
+        </a>
+      );
+    })
   }
 </div>
