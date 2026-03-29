@@ -1,0 +1,15 @@
+title: Lead Consultant
+company: Withum
+location: Bengaluru, Karnataka
+startDate: 2023-09-01
+endDate: Present
+achievements:
+  - Responsible for developing various auditing forms, workflows, and backend business logic for Dynamic Auditing Solution (DAS), an advanced data-driven audit platform.
+  - Led a team that ideated and implemented ReportCast(Vani), a POC LLM(AI) powered solution designed to streamline data conversion and workflow automation.
+  - Developed comprehensive adoption guidelines and shared knowledge resources for LLMs(AI) across the digital vertical, resulting in enhanced developer productivity.
+  - Contributed to developing various UI components for representing auditing workflows and maintaining related backend logic.
+skills:
+  - LLM
+  - AI
+  - Node.js
+  - React

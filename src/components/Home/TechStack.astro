@@ -1,0 +1,42 @@
+---
+const techStack = [
+  {
+    category: 'Front-End',
+    items: ['JavaScript', 'TypeScript', 'Angular', 'React'],
+  },
+  {
+    category: 'Back-End / Runtime',
+    items: ['Node.js', 'NestJS', 'Express.js', 'Rust'],
+  },
+  {
+    category: 'Databases & APIs',
+    items: ['PostgreSQL', 'MongoDB', 'GraphQL', 'OAuth 2.0'],
+  },
+  {
+    category: 'DevOps & Tools',
+    items: ['Git', 'Docker', 'CI/CD'],
+  },
+];
+---
+
+<section id="tech-stack" class="py-16">
+  <h2 class="text-3xl font-bold tracking-tight mb-12 flex items-center gap-4">
+    <span class="w-8 h-px bg-foreground opacity-20"></span>
+    Tech Stack
+  </h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {techStack.map((group) => (
+      <div>
+        <h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4">
+          {group.category}
+        </h3>
+        <ul class="space-y-2">
+          {group.items.map((item) => (
+            <li class="text-lg font-medium">{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

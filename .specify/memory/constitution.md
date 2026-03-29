@@ -1,50 +1,42 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Project Constitution: Professional Developer Portfolio
 
-## Core Principles
+## I. Core Principles
+*   **Performance First:** The site must achieve 90+ scores on Google Lighthouse for Performance, SEO, and Accessibility.
+*   **Zero-Cost Infrastructure:** All hosting, databases, and services must operate within the free tiers of Vercel, Cloudflare, or GitHub.
+*   **Spec-Driven Development:** No implementation should occur without a verified `spec.md` and `plan.md`.
+*   **Code over Comments:** Prioritize clean, self-documenting code with TypeScript.
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+## II. Technology Stack
+*   **Framework:** Astro (preferred for zero-JS blog performance) or Next.js (App Router).
+*   **Styling:** Tailwind CSS (utility-first, no external CSS files).
+*   **Content:** Markdown or MDX for blog posts and project descriptions (no external DB for content).
+*   **Deployment:** Vercel or Cloudflare Pages (Git-based CI/CD).
+*   **Components:** Accessible, reusable components using Shadcn/ui or primitive HTML/CSS.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+## III. Architectural Patterns
+*   **Islands Architecture:** (If using Astro) Use React/Vue components only where interactivity is required.
+*   **Content Collections:** Use strictly typed schemas for Blogs and Projects.
+*   **Social Integration:** 
+    *   Centralized `config.ts` for social handles (GitHub, LinkedIn, Twitter/X).
+    *   Use SVG icons (Simple Icons/Lucide) for all external links.
+*   **Metadata:** Global SEO component to handle Open Graph tags and meta descriptions for every page.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+## IV. Social & Identity Requirements
+*   **Name:** Atish Naik
+*   **Experience Level:** 8+ Years (Senior Software Developer).
+*   **Primary Links:**
+    *   GitHub: Must link to active repos.
+    *   LinkedIn: Professional profile link.
+    *   Twitter/X: Tech-focused handle.
+*   **Visuals:** Minimalist, dark-mode-first aesthetic.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+## V. Forbidden Patterns
+*   **No Heavy Libraries:** Do not use heavy UI frameworks (e.g., Bootstrap, Material UI).
+*   **No Runtime DBs:** Avoid using a database for blog content; keep it in Git.
+*   **No Inline Styles:** Use Tailwind classes exclusively.
+*   **No "Vibe Coding":** The AI must not suggest features or libraries not explicitly defined in this constitution without approval.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
-
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+## VI. Testing & Quality
+*   **Responsive Design:** Mobile-first approach is mandatory.
+*   **Accessibility:** Must adhere to WCAG AA standards.
+*   **Validation:** All TypeScript types must be strictly defined (no `any`).

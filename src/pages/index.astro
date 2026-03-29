@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero/Hero.astro';
+import Experience from '@/components/Experience/Experience.astro';
+import ProjectGrid from '@/components/Projects/ProjectGrid.astro';
+import LatestPosts from '@/components/Blog/LatestPosts.astro';
+import TechStack from '@/components/Home/TechStack.astro';
+---
+
+<BaseLayout title="Atish Naik | Portfolio">
+  <Hero />
+  <div class="space-y-24">
+    <TechStack />
+    <ProjectGrid />
+    <Experience />
+    <LatestPosts />
+  </div>
+</BaseLayout>

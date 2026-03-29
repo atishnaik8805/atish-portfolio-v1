@@ -1,0 +1,11 @@
+name: FETCH-UI-DOM-MCP
+description: A Model Context Protocol (MCP) server that enables AI agents to fetch and analyze the DOM structure of web pages for automated browsing and UI testing.
+featured: true
+techTags:
+  - PowerShell
+  - MCP
+  - Node.js
+  - Web Scraping
+demoUrl: https://github.com/atishnaik8805/FETCH-UI-DOM-MCP
+sourceUrl: https://github.com/atishnaik8805/FETCH-UI-DOM-MCP
+coverImage: /images/ai-platform.jpg

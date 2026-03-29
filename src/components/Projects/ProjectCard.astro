@@ -1,0 +1,72 @@
+---
+import { ExternalLink, Github } from 'lucide-react';
+
+interface Props {
+  project: {
+    data: {
+      name: string;
+      description: string;
+      featured: boolean;
+      techTags: string[];
+      demoUrl: string;
+      sourceUrl?: string;
+    }
+  };
+}
+
+const { project } = Astro.props;
+const { name, description, techTags, demoUrl, sourceUrl } = project.data;
+---
+
+<article class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+  <div class="flex justify-between items-baseline mb-2">
+    <span class="text-xs font-medium text-gray-500 uppercase tracking-wider">
+      Project
+    </span>
+    {project.data.featured && (
+      <span class="text-xs font-bold text-primary px-2 py-0.5 rounded bg-primary/10">
+        Featured
+      </span>
+    )}
+  </div>
+
+  <h3 class="text-xl font-bold mb-2 group">
+    <a href={demoUrl} target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-2">
+      {name}
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+    </a>
+  </h3>
+  
+  <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+    {description}
+  </p>
+  
+  <div class="flex flex-wrap gap-2 mb-6">
+    {techTags.map((tag) => (
+      <span class="text-xs text-gray-500">#{tag.toLowerCase().replace(/\s+/g, '')}</span>
+    ))}
+  </div>
+  
+  <div class="flex gap-4">
+    <a
+      href={demoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 text-sm font-semibold hover:underline"
+    >
+      <ExternalLink size={16} />
+      Demo
+    </a>
+    {sourceUrl && (
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-foreground transition-colors"
+      >
+        <Github size={16} />
+        Source
+      </a>
+    )}
+  </div>
+</article>

@@ -1,0 +1,22 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const currentYear = new Date().getFullYear();
+const prevYearShort = (currentYear - 1).toString().slice(-2);
+const currentYearShort = currentYear.toString().slice(-2);
+const resumeFilename = `Atish Naik Resume-${prevYearShort}-${currentYearShort}`;
+---
+<nav class="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+  <div class="container mx-auto px-4 h-16 flex justify-between items-center">
+    <a href="/" class="text-xl font-bold hover:opacity-80 transition-opacity">
+      AN
+    </a>
+    <div class="flex items-center gap-6">
+      <a href="/" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Home</a>
+      <a href="/blog" class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Blog</a>
+      <a href="/Atish-Naik-Resume.pdf" target="_blank" download={resumeFilename} class="text-sm font-medium hover:text-gray-600 dark:hover:text-gray-400 transition-colors">Resume</a>
+      <div class="w-px h-4 bg-gray-200 dark:bg-gray-800"></div>
+      <ThemeToggle />
+    </div>
+  </div>
+</nav>

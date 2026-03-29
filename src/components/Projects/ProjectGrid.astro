@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+
+const projects = await getCollection('projects');
+const sortedProjects = projects.sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  return 0;
+});
+---
+
+<section id="projects" class="py-16">
+  <div class="flex justify-between items-baseline mb-12">
+    <h2 class="text-3xl font-bold tracking-tight flex items-center gap-4">
+      <span class="w-8 h-px bg-foreground opacity-20"></span>
+      Featured Projects
+    </h2>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {sortedProjects.map((project) => (
+      <ProjectCard project={project} />
+    ))}
+  </div>
+</section>

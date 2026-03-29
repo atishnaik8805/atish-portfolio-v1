@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import TimelineItem from './TimelineItem.astro';
+
+const experience = await getCollection('experience');
+const sortedExperience = experience.sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime());
+---
+
+<section id="experience" class="py-16">
+  <h2 class="text-3xl font-bold tracking-tight mb-12 flex items-center gap-4">
+    <span class="w-8 h-px bg-foreground opacity-20"></span>
+    Work Experience
+  </h2>
+  
+  <div class="max-w-4xl mx-auto">
+    {sortedExperience.map((entry) => (
+      <TimelineItem experience={entry} />
+    ))}
+  </div>
+</section>

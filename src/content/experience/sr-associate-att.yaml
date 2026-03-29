@@ -1,0 +1,15 @@
+title: Sr. Associate, Application Development
+company: AT&T
+location: Bengaluru, Karnataka
+startDate: 2021-11-01
+endDate: Present
+achievements:
+  - Responsible for designing and developing various dashboards and corresponding widgets for IGEMS-NG, a network monitoring web application.
+  - Developed UI components for representing network related data that was easy to consume for end users.
+  - Created a CMS for the web application to reduce the code base and facilitate faster creation of user-requested dashboards/widgets.
+  - Enhanced performance and UX by implementing concepts like lazy-loading, resource-hinting, and caching.
+skills:
+  - JavaScript
+  - React
+  - CMS
+  - Performance Optimization

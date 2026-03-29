@@ -1,0 +1,10 @@
+name: Portfolio V1
+description: My first professional portfolio built with Gatsby and GraphQL.
+featured: false
+techTags:
+  - Gatsby
+  - GraphQL
+  - Styled Components
+demoUrl: https://atish-naik-v1.netlify.app
+sourceUrl: https://github.com/atish-naik/portfolio-v1
+coverImage: /images/portfolio-v1.jpg

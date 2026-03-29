@@ -1,0 +1,47 @@
+---
+import '@/styles/globals.css';
+import Meta from '@/components/SEO/Meta.astro';
+import Navbar from '@/components/UI/Navbar.astro';
+import Footer from '@/components/UI/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+}
+
+const { title, description, image, article } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta title={title} description={description} image={image} article={article} />
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      window.localStorage.setItem('theme', theme);
+    </script>
+  </head>
+  <body class="min-h-screen transition-colors duration-300">
+    <Navbar />
+    <main class="container mx-auto px-4 py-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
