@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest",
+    "test": "vitest run",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
     "format": "prettier --write .",
     "test:e2e": "playwright test"
@@ -18,10 +18,12 @@
     "astro": "^4.16.18",
     "astro-og-canvas": "^0.4.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^12.38.0",
     "lucide-react": "^0.363.0",
     "nanostores": "^0.10.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "roughjs": "^4.6.6",
     "simple-icons": "^11.9.0",
     "tailwind-merge": "^2.2.2",
     "zod": "^3.22.4"
