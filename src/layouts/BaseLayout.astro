@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import Meta from '@/components/SEO/Meta.astro';
 import Navbar from '@/components/UI/Navbar.astro';
 import Footer from '@/components/UI/Footer.astro';
+import Preloader from '@/components/UI/Preloader/Preloader.astro';
 
 interface Props {
   title?: string;
@@ -35,9 +36,24 @@ const { title, description, image, article } = Astro.props;
         document.documentElement.classList.add('dark');
       }
       window.localStorage.setItem('theme', theme);
+
+      // Preloader critical skip logic
+      const PRELOADER_KEY = 'portfolio_preloader_seen';
+      const hasSeen = typeof sessionStorage !== 'undefined' && sessionStorage.getItem(PRELOADER_KEY) === 'true';
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (hasSeen || prefersReducedMotion) {
+        document.documentElement.classList.add('preloader-skipped');
+      }
     </script>
+    <style is:global>
+      .preloader-skipped #preloader {
+        display: none !important;
+      }
+    </style>
   </head>
   <body class="min-h-screen transition-colors duration-300">
+    <Preloader />
     <Navbar />
     <main class="container mx-auto px-4 py-8">
       <slot />
